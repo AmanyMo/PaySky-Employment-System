@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Applicant\Applicant Commands\" />
+    <Folder Include="Applicant\Applicant Queries\" />
+    <Folder Include="Employer\Employer Commands\" />
+    <Folder Include="Employer\Employer Queries\" />
+    <Folder Include="Employer\" />
+  </ItemGroup>
+
 </Project>
