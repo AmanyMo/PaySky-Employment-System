@@ -1,6 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using PaySky.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Services.AddDbContext
+builder.Services.AddDbContext<EmploymentDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PaySkyDatabaseAConnection")));
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
