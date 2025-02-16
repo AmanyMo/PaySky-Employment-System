@@ -50,7 +50,7 @@ https://jwt.io/
 **DOWNLOAD AND RUN **
 -clone the repo
 -make sure that connection String is correct.
--run db script or make Migration(add-migration Migv1  **then** update-database)
+-run db script (PaySkyScript) or make Migration(add-migration Migv1  **then** update-database)
 -run and test with Swagger Api
 -Swagger is Authenticated , so you need to register and login first and take the returned Token and pass it in Auth fiels in each endpoint to be ablr to run that endpoint
   make sure that you take the right token  as each user has a different token , Applicant token open some endpoints and Employer open other and there are shared endpoint between them.
