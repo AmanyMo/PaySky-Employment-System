@@ -1,6 +1,7 @@
 ﻿
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 using PaySky.Application.Employer.Commands.Employer_Commands;
 using PaySky.Application.Employer.Employer_Commands;
@@ -17,6 +18,13 @@ namespace PaySky.Presentation
     {
         public static void LoadServices(IServiceCollection services,IConfiguration configuration)
         {
+            //caching global optionnnn::
+            var globalCacheOptions = new MemoryCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(60) // Cache for 60 seconds
+            };
+
+
             //Jwt configuration starts here
             var jwtIssuer = configuration.GetSection("Jwt:Issuer").Get<string>();
             var jwtKey = configuration.GetSection("Jwt:SecretKey").Get<string>();
@@ -60,7 +68,6 @@ namespace PaySky.Presentation
             });
 
 
-
             //add mediatorR to manage CQRS
             services.AddMediatR(configuration =>
             {
@@ -82,6 +89,7 @@ namespace PaySky.Presentation
 
             //add cache::
             services.AddMemoryCache();
+            services.AddSingleton(globalCacheOptions);
 
             //register DI
             services.AddScoped<IVacancyRepository, VacancyRepository>();
