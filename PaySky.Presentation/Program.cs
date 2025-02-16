@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using PaySky.Application.Employer.Commands.Employer_Commands;
-using PaySky.Application.Employer.Employer_Commands;
-using PaySky.Application.Shared.Queries;
+
 using PaySky.Infrastructure;
 using PaySky.Presentation;
 
