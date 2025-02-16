@@ -15,8 +15,9 @@ Requirements that applied Untill Now::
 6 logging
 7 Exception Handling
 8 Clean Arch CQRS
+9 caching on limited range only 2 or 3 functions 
 
-
+----------------------------------------------------------------------------------------------------------
 
 Structure::
 this mini  project follow clean,CQRS arch as we have separate layers for PResentation , Application,Domain, and Infrastructure.
@@ -41,6 +42,10 @@ This Is the Db Script use it to run db and create tables and relation between th
 
 *******************************************************
 
+To see the token data , use this site ::
+https://jwt.io/
+
+****************************************************************
 
 **DOWNLOAD AND RUN **
 -clone the repo
