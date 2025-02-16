@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Applicant\Applicant Commands\" />
     <Folder Include="Applicant\Applicant Queries\" />
-    <Folder Include="Employer\Employer Commands\" />
-    <Folder Include="Employer\Employer Queries\" />
-    <Folder Include="Employer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaySky.Domain\PaySky.Domain.csproj" />
+    <ProjectReference Include="..\PaySky.Infrastructure\PaySky.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
