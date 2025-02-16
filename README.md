@@ -15,7 +15,7 @@ Requirements that applied Untill Now::
 6 logging
 7 Exception Handling
 8 Clean Arch CQRS
-9 caching on limited range only 2 or 3 functions 
+9 caching on limited range only 4-5 functions 
 
 ----------------------------------------------------------------------------------------------------------
 
