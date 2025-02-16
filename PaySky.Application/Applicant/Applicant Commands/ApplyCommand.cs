@@ -28,14 +28,25 @@ namespace PaySky.Application.Applicant.Applicant_Commands
         {
             if (await _vacancyRepository.IsMaxReached(request.vacancyId))
                         return false; // Max applications reached
-           
+            //Check about 24h
+            var app_vac = new ApplicantVacancy
+            {
+                UserId = request.applicantId,
+                VacancyId = request.vacancyId
+            };
+            var lastApplication = await _applicantVacancy.GetLastApplication(app_vac);
+
+            if (lastApplication != null && (DateTime.UtcNow - lastApplication.AppliedDate).TotalHours < 24)
+            {
+                //go to my exception middleware ..
+                throw new InvalidOperationException("You are not allowed to apply for more than one vacancy per day.");
+            }
 
             var application = new ApplicantVacancy
             {
                 VacancyId = request.vacancyId,
                 UserId = request.applicantId,
-                AppliedDate = DateTime.UtcNow,
-                
+                AppliedDate = DateTime.UtcNow, 
             };
 
             await _applicantVacancy.AddAsync(application);

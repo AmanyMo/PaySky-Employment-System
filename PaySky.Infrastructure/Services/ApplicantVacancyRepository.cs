@@ -51,5 +51,12 @@ namespace PaySky.Infrastructure.Services
             return "Applied";
         }
 
+        public async Task<ApplicantVacancy> GetLastApplication(ApplicantVacancy application)
+        {
+            return await _context.Applicant_Vacancy
+                .Where(av => av.UserId == application.UserId)
+                .OrderByDescending(av => av.AppliedDate).FirstOrDefaultAsync();
+ 
+        }
     }
 }
