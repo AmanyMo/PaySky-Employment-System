@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PaySky.Infrastructure;
 
@@ -11,9 +12,11 @@ using PaySky.Infrastructure;
 namespace PaySky.Infrastructure.Migrations
 {
     [DbContext(typeof(EmploymentDbContext))]
-    partial class EmploymentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250216154009_modifyCreatedAtUser_MigV003")]
+    partial class modifyCreatedAtUser_MigV003
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
