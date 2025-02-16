@@ -8,7 +8,7 @@ namespace PaySky.Domain.Entities
         public string Name { get; set; }
         public string Email { get; set; }
         public string HashPassword { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedAt { get; set; }
         public int RoleId { get; set; }
 
 
