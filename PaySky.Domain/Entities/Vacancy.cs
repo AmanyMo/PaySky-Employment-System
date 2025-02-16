@@ -1,15 +1,17 @@
 ﻿
 
+using PaySky.Domain.Abstract;
+
 namespace PaySky.Domain.Entities
 {
-    public class Vacancy
+    public class Vacancy :AbstractVacancy
     {
         public int Id { get; set; } 
-        public string Title { get; set; } 
-        public string Description { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ExpiryDate { get; set; } 
-        public int MaxApplicant { get; set; }
+        //public string Title { get; set; } 
+        //public string Description { get; set; }
+        //public DateTime CreatedDate { get; set; }
+        //public DateTime ExpiryDate { get; set; } 
+        //public int MaxApplicant { get; set; }
         public int? EmployerId { get; set; } 
 
         
