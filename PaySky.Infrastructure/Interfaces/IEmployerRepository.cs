@@ -1,0 +1,16 @@
+﻿using PaySky.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PaySky.Infrastructure.Interfaces
+{
+    public interface IEmployerRepository
+    {
+        Task<IEnumerable<Vacancy>> GetExpiredVacancies(int employerId);
+        Task<IEnumerable<User>> GetApplicantsForVacancy(int vacancyId);
+
+    }
+}
