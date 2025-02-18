@@ -46,7 +46,9 @@ To see the token data , use this site ::
 https://jwt.io/
 
 ****************************************************************
+To Automatically archiving vacancies, use a background service to get expired from db and archive it on file--
 
+***************************************************************
 **DOWNLOAD AND RUN **
 -clone the repo
 -make sure that connection String is correct.
